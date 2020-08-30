@@ -15,15 +15,24 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 # ken add
+# At top on conf.py (with other import statements)
+#import recommonmark
+#from recommonmark.transform import AutoStructify
+
 import sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 master_doc = 'index'
+
+#from recommonmark.parser import CommonMarkParser
+#source_parsers = {
+#	'.md': CommonMarkParser,
+#}
+#source_suffix = ['.rst', '.md']
+
 
 # -- Project information -----------------------------------------------------
 
 project = 'scrapy-cookbook'
-copyright = '2020, Ken Huang'
+copyright = '2020, Zen Dev Team'
 author = 'Ken Huang'
 
 # The full version, including alpha/beta/rc tags
@@ -58,10 +67,24 @@ exclude_patterns = []
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-html_theme = 'alabaster'
+# ken modify
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+#extensions = ['sphinxcontrib.fulltoc', 'recommonmark']
+extensions = ['recommonmark']
+
+# ken add
+# At the bottom of conf.py
+#def setup(app):
+#	app.add_config_value('recommonmark_config', {
+#			'url_resolver': lambda url: github_doc_root + url,
+#			'auto_toc_tree_section': 'Contents',
+#			}, True)
+#	app.add_transform(AutoStructify)
+
