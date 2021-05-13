@@ -1,7 +1,7 @@
-Welcome to Orca User Guide
+Welcome to LinCloud User Guide
 ==========================
 
-Orca is a powerful platform for delivering web traffic. It provides many ways to control and optimize HTTP/HTTPS traffic.
+LinCloud is a powerful platform for data analysing. It provides many mtrics to analyse and help optimize business logics.
 
 .. toctree::
    :maxdepth: 2
@@ -9,3 +9,4 @@ Orca is a powerful platform for delivering web traffic. It provides many ways to
 
    hello
    hh
+   NodeTypeAndCacheState
